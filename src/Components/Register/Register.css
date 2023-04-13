@@ -1,0 +1,89 @@
+.register{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white;
+    background-image: url("https://png.pngtree.com/png-vector/20220607/ourmid/pngtree-woman-bank-employee-icon-png-image_4855284.png");
+    background-repeat: no-repeat;
+    
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+}
+/* .btn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 18rem;
+    height: 2.4rem;
+    border-radius: 7px;
+    background-color: rgb(86, 151, 20);
+} */
+
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: rgb(86, 151, 20);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 18rem;
+  }
+  
+  .btn:hover {
+    background-color: #66a60c;
+  }
+
+
+.btngoogle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18rem;
+    height: 2.4rem;
+    border-radius: 7px;
+    margin-top: 1rem;
+    
+}
+.btn2{
+    display: flex;
+    margin-top: 1rem;
+    
+}
+.btngit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 8.5rem;
+    height: 2.4rem;
+    border-radius: 7px;
+}
+
+.btnfacebook{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0.5rem;
+    width: 8.5rem;
+    height: 2.4rem;
+    border-radius: 7px;
+}
+
+.input{
+   
+    width: 18rem;
+    height: 2.4rem;
+    margin: 1rem;
+    border-radius: 7px;
+
+}
+
