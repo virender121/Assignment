@@ -1,26 +1,44 @@
 import React from 'react';
 import "./Register.css"
-// import {useDispatch} from 'react-redux'
-// import {addUser} from '../../store/registrationSlice'
+import {useDispatch} from 'react-redux'
+import {addUser} from '../../store/registrationSlice'
 import {FcGoogle} from 'react-icons/fc'
 import {BsFacebook} from 'react-icons/bs'
 import {BsGithub} from 'react-icons/bs'
+import {Link, useNavigate} from 'react-router-dom'
 
-
-import {Link} from 'react-router-dom'
  const Register = () => {
-//  const dispatch = useDispatch();
-
+ const dispatch = useDispatch();
+  const navigate = useNavigate()
   const handleRegister=(e) =>{
    e.preventDefault()
-  //  const registrationData ={
-  //   name: e.target.name.value,
-  //   email: e.target.email.value,
-  //   password: e.target.password.value
-  //  }
-  //  dispatch(addUser(registrationData))
-  // }
+   const registrationData ={
+    name: e.target.name.value,
+    email: e.target.email.value,
+    password: e.target.password.value
+   }
+  //  validate name
+   if (!/^[a-zA-Z ]*$/.test(registrationData.name)) {
+    alert('Invalid name');
+    return;
   }
+  
+  // validate email
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(registrationData.email)) {
+    alert('Invalid email');
+    return;
+  }
+  
+  // validate password
+  if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(registrationData.password)) {
+    alert('Invalid password');
+    return;
+  }
+  
+   dispatch(addUser(registrationData))
+   navigate('/')
+  }
+  
     
       
 
@@ -33,11 +51,11 @@ import {Link} from 'react-router-dom'
       
       <form onSubmit={handleRegister} className='form'>
         <label style={{marginRight:"13.5rem"}}>Username</label>
-          <input type="text"  className='input' />
+          <input type="text" name='name' className='input' />
           <label style={{marginRight:"15.8rem"}}>Email</label>
-          <input type="email" className='input' />
+          <input type="email"  name='email' className='input' />
           <label style={{marginRight:"13.5rem"}}>Password</label>
-          <input type="password"  className='input' />
+          <input type="password"  name='password' className='input' />
           
         <button type="submit" className='btn'>Register</button>
         <p>

@@ -1,23 +1,24 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {FcGoogle} from 'react-icons/fc'
 import {BsFacebook} from 'react-icons/bs'
 import {BsGithub} from 'react-icons/bs'
-// import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 const Login = () => {
-  // const registrationData = useSelector((state)=>state.registration)
+  const registrationData = useSelector((state)=>state.registration)
+  const navigate = useNavigate()
     const handleLogin=(e)=>{
       e.preventDefault()
-      // const email = e.target.email.value;
-      // const password = e.target.password.value;
-      // const userExists = registrationData.some(
-      //   (user) => user.email=== email && user.password === password
-      // );
-      // if(userExists){
-      //   window.location.href= '/'
-      // } else {
-      //   window.alert("user not exist")
-      // }
+      const email = e.target.email.value;
+      const password = e.target.password.value;
+      const userExists = registrationData.some(
+        (user) => user.email=== email && user.password === password
+      );
+      if(userExists){
+        navigate('/dashboard')
+      } else {
+        window.alert("user not exist")
+      }
 
     }
   return (
@@ -29,9 +30,9 @@ const Login = () => {
     <form onSubmit={handleLogin} className='form'>
       
         <label style={{marginRight:"15.8rem"}}>Email</label>
-        <input type="email" className='input' />
+        <input type="email" className='input' name='email'/>
         <label style={{marginRight:"13.5rem"}}>Password</label>
-        <input type="password" className='input' />
+        <input type="password" className='input' name='password' />
         
       <button type="submit" className='btn'>Sign In</button>
       <p>
