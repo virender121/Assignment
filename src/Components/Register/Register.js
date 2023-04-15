@@ -35,9 +35,12 @@ import {Link, useNavigate} from 'react-router-dom'
     return;
   }
   
-   dispatch(addUser(registrationData))
-   navigate('/')
+  const users = JSON.parse(localStorage.getItem('users') || '[]');
+  users.push(registrationData);
+  localStorage.setItem('users', JSON.stringify(users));
 
+  dispatch(addUser(registrationData));
+  navigate('/');
   }
   
     
