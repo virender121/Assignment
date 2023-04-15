@@ -1,120 +1,87 @@
-import React from 'react';
-import LeftSection from '../../Section/LeftSection/LeftSection';
-import Header from '../../Section/Header/Header';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-
-// import Box from '@mui/material/Box';
-import { DataGrid } from '@mui/x-data-grid';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
-// import Chip from '@mui/material/Chip';
-// import Check from '@mui/icons-material/Check';
-
-// const finalTheme = createTheme({
-//   components: {
-//     MuiChip: {
-//       styleOverrides: {
-//         root: ({ theme }) =>
-//           theme.unstable_sx({
-//             // https://mui.com/system/getting-started/the-sx-prop/#spacing
-//             px: 1,
-//             py: 0.25,
-//             // https://mui.com/system/borders/#border-radius
-//             borderRadius: 1, // 4px as default.
-//           }),
-//         label: {
-//           padding: 'initial',
-//         },
-//         icon: ({ theme }) =>
-//           theme.unstable_sx({
-//             mr: 0.5,
-//             ml: '-2px',
-//           }),
-//       },
-//     },
-//   },
-// });
-
-const columns = [
-  { field: 'id', headerName: '#', width: 90 },
-  {
-    field: 'avatar',
-    headerName: 'Avatar',
-    width: 100,
-    renderCell: (params) => (
-      <img src={params.value} style={{ width: 50, height: 50, borderRadius: '50%' }} alt="Avatar" />
-    ),
-    editable: true,
-  },
-  {
-    field: 'name',
-    headerName: 'Name',
-    width: 150,
-    editable: true,
-  },
-  {
-    field: 'company',
-    headerName: 'Company Name',
-    type: 'string',
-    width: 180,
-    editable: true,
-  },
-  {
-    field: 'status',
-    headerName: 'Status',
-    sortable: false,
-    width: 160,
-  },
-  {
-    field: 'dueDate',
-    headerName: 'Due Date',
-    type: 'string',
-    width: 110,
-    editable: true,
-  },
-  {
-    field: 'target',
-    headerName: 'Target Achievement',
-    type: 'string',
-    width: 180,
-    editable: true,
-  },
-  
-];
+import * as React from "react";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
+import "./Analytics.css";
+import CustomerReview from '../CustomerReview/CustomerReview'
+function createData(name, trackingId, date, status) {
+  return { name, trackingId, date, status };
+}
 
 const rows = [
-  { id: "#54", avatar: "https://example.com/avatar1.png", name: 'Juan C. Cargill', company: "Micro Electronics", status: "Canceled", dueDate: "12 Dec",target:"71%" },
-  { id: "#55", avatar: "https://example.com/avatar1.png", name: 'Johnathan Phelan', company: "Hatchworks", status: "On Hold", dueDate: "12 Dec",target:"54%" },
-  { id: "#56", avatar: "https://example.com/avatar1.png", name: 'Darelle Lowe', company: "Riddle Electronics", status: "In Progress", dueDate: "12 Dec",target:"97%" },
-  { id: "#57", avatar: "https://example.com/avatar1.png", name: 'George T. Cottrell', company: "Pixelcloud", status: "Completed", dueDate: "12 Dec" ,target:"88%"},
+  createData("Lasania Chiken Fri", 18908424, "2 March 2022", "Approved"),
+  createData("Big Baza Bang ", 18908424, "2 March 2022", "Pending"),
+  createData("Mouth Freshner", 18908424, "2 March 2022", "Approved"),
+  createData("Cupcake", 18908421, "2 March 2022", "Delivered"),
 ];
 
-const Analytics = () => {
-//     const getChipColor = (status) => {
-       
-//       };
+
+const makeStyle=(status)=>{
+  if(status === 'Approved')
+  {
+    return {
+      background: 'rgb(145 254 159 / 47%)',
+      color: 'green',
+    }
+  }
+  else if(status === 'Pending')
+  {
+    return{
+      background: '#ffadad8f',
+      color: 'red',
+    }
+  }
+  else{
+    return{
+      background: '#59bfff',
+      color: 'white',
+    }
+  }
+}
+
+export default function BasicTable() {
   return (
-    <div className="main">
-
-      <div className='left-section'><LeftSection /></div>
-
-      <div className='right-section'>
-        <div className='right-header'><Header /></div>
-        <h2>Company Agent Status</h2>
-          <DataGrid
-            rows={rows}
-             columns={columns}/>
-         
-          
-          
+      <div className="Table">
+      <h3>Recent Orders</h3>
+        <TableContainer
+          component={Paper}
+          style={{ boxShadow: "0px 13px 20px 0px #80808029" }}
+        >
+          <Table sx={{ minWidth: 650 }} aria-label="simple table">
+            <TableHead>
+              <TableRow>
+                <TableCell>Product</TableCell>
+                <TableCell align="left">Tracking ID</TableCell>
+                <TableCell align="left">Date</TableCell>
+                <TableCell align="left">Status</TableCell>
+                <TableCell align="left"></TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody style={{ color: "white" }}>
+              {rows.map((row) => (
+                <TableRow
+                  key={row.name}
+                  sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                >
+                  <TableCell component="th" scope="row">
+                    {row.name}
+                  </TableCell>
+                  <TableCell align="left">{row.trackingId}</TableCell>
+                  <TableCell align="left">{row.date}</TableCell>
+                  <TableCell align="left">
+                    <span className="status" style={makeStyle(row.status)}>{row.status}</span>
+                  </TableCell>
+                  <TableCell align="left" className="Details">Details</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+        <CustomerReview/>
       </div>
-    </div>
   );
-};
-
-export default Analytics;
+}
