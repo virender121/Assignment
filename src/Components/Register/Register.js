@@ -9,8 +9,8 @@ import {Link, useNavigate} from 'react-router-dom'
 
  const Register = () => {
  const dispatch = useDispatch();
-  const navigate = useNavigate()
-  const handleRegister=(e) =>{
+ const navigate = useNavigate()
+ const handleRegister=(e) =>{
    e.preventDefault()
    const registrationData ={
     name: e.target.name.value,
@@ -37,19 +37,19 @@ import {Link, useNavigate} from 'react-router-dom'
   
    dispatch(addUser(registrationData))
    navigate('/')
+
   }
   
     
       
 
   return (
-    <div className='register'>
-      <div style={{marginTop: '2rem'}}>
-       <h1 style={{color:"rgb(86, 151, 20)", textTransform: "uppercase", marginRight: '13rem'}}>Smile</h1>
-      <h2 style={{marginRight:"2rem", marginBottom: '2rem'}} >Welcome Back to Smile.</h2>
-      </div>
+    <div className='first'>
+      <div className='sub-main'>
       
       <form onSubmit={handleRegister} className='form'>
+      <h1 style={{color:"rgb(86, 151, 20)", textTransform: "uppercase", marginRight: '13rem',fontFamily:"cursive"}}>Smile</h1>
+      <h2 style={{marginRight:"2rem", marginBottom: '2rem',fontFamily:"cursive"}} >Welcome Back to Smile.</h2>
         <label style={{marginRight:"13.5rem"}}>Username</label>
           <input type="text" name='name' className='input' />
           <label style={{marginRight:"15.8rem"}}>Email</label>
@@ -75,6 +75,7 @@ import {Link, useNavigate} from 'react-router-dom'
             
       </form>
     </div>
+    </div>
   );
 };
-export default Register
+export default Register 

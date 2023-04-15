@@ -1,16 +1,25 @@
 * {
+  
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
-.container{
+/* .container{
     position: relative;
     display: flex;
     justify-content: flex-start;
     right: 1.6rem;
     gap: 4rem;
+} */
+.container {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  right: 0.6rem; /* adjust as needed */
+  gap: 4rem;
 }
-.sidebarOption{
+ 
+ .sidebarOption{
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -20,7 +29,22 @@
    display:inline-flex;
    text-align: center ;
     font-family: "TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif";
+} 
+
+.sidebar {
+  display: flex;
+  align-items: center;
+  color: white;
+  min-width: 15.6rem;
+  margin-top: 1rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  margin-bottom: 1rem;
+  /* position: absolute; */
+  top: 0;
+  left: 0;
 }
+
 
 .sidebarOption h2 {
     font-weight: 00;

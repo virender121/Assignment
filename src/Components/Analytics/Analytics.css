@@ -1,0 +1,14 @@
+.main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1px; 
+  }
+  
+  .leftsection {
+    border-right: 1px solid #ccc;
+    padding-right: 1px; 
+  }
+  
+  .rightsection {
+    padding-left: 1px; 
+  }
