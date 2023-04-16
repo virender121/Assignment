@@ -9,6 +9,7 @@ const Header = () => {
       <div>
       <Avatar src="https://cdn.batesvilletechnology.com/fh_live/13000/13002/images/obituaries/6827690.jpg" 
       alt="Cindy Baker"/>
+        {/* <button id="toggleBtn">&#9776;</button> */}
       </div>
     </div>
   )

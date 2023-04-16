@@ -57,4 +57,22 @@
     /* font-weight: bold; */
     margin: 1rem;
   }
-  
+
+@media only screen and (max-width: 767px) {
+.plan {
+flex-direction: column;
+}
+
+.text {
+margin: 1rem;
+align-items: center;
+}
+
+.button {
+justify-content: center;
+}
+
+.btn5 {
+margin: 1rem 0;
+}
+}

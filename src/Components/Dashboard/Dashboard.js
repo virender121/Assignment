@@ -19,16 +19,18 @@ console.log(user,"====")
   
   return (
     <div className="main">
+      <input type="checkbox" id="toggleBtn" />
+      <label htmlFor="toggleBtn" className="menu-icon">
+        <Header />
+      </label>
+      
       <div className='leftsection'><LeftSection/></div>
 
       <div className='rightsection'>
-        <div className='right-header'><Header/></div> 
         <RightSection/>
-        
       </div>
     </div>
   )
 }
-
-export default Dashboard
+export default Dashboard;
 

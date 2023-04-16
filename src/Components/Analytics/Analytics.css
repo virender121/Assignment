@@ -169,20 +169,49 @@ th {
   margin-top: 4rem;
   border: 1px solid black;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 768px) {
+  .header {
+    display: none;
+  }
+
+  .main {
+    grid-template-columns: 1fr;
+  }
+
+  .leftsection,
+  .rightsection {
+    border: none;
+    padding: 0;
+  }
+
+  .table-card {
+    border-radius: 0;
+    box-shadow: none;
+    padding: 10px;
+  }
+
+  .table-header {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .table-container {
+    border-radius: 0;
+    box-shadow: none;
+  }
+
   .Table {
-    width: 170%;
+    width: 100%;
+  }
+
+  .vretical{
+    margin-right: 0;
     margin-top: 2rem;
   }
-}
 
-
-@media screen and (max-width: 768px) {
-  .Table{
+  .rightsection .cards {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 23rem;
+    margin-left: 0;
+    margin-bottom: 2rem;
   }
 }

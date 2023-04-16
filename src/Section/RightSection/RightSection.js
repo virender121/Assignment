@@ -24,7 +24,7 @@ const RightSection = () => {
           <h2>{item.author}</h2>
           <h4>{item.title}</h4>
           <p>{item.description}</p>
-          <img style ={{width: "auto", height:"350px"}} src={item.urlToImage} alt='img'/>
+          <img style ={{width: "auto", height:"350px"}} className='img' src={item.urlToImage} alt='img'/>
           <p>{item.content}</p>
         </div>
       )

@@ -1,27 +1,44 @@
+/* Grid styles */
 .main {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 1px; 
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 1px; 
+}
+
+.leftsection {
+  border-right: 1px solid #ccc;
+  padding-right: 1px; 
+}
+
+.rightsection {
+  padding-left: 1px; 
+}
+
+/* CSS for mobile view */
+@media screen and (max-width: 768px) {
+  .main {
+    display: block;
   }
   
   .leftsection {
-    border-right: 1px solid #ccc;
-    padding-right: 1px; 
+    display: none;
   }
   
   .rightsection {
-    padding-left: 1px; 
-  
+    width: 100%;
+    margin: 0.5rem 0;
   }
-  
-  @media only screen and (max-width: 768px) {
-    .main {
-      width: 100%;
-    }
-    
-    .leftsection, .rightsection {
-      width: 100%;
-      margin: 0.5rem 0;
-    }
+
+  /* Hide header */
+  .header {
+    display: none;
   }
-  
+
+  /* Show hamburger icon at top */
+  .header__menu-icon {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+  }
+}
