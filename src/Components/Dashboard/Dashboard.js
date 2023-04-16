@@ -7,6 +7,7 @@ import RightSection from '../../Section/RightSection/RightSection'
 import Header from '../../Section/Header/Header'
 import { Navigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import Footer from '../../Section/Footer/Footer'
 
 const Dashboard = () => {
   console.log("world")
@@ -23,6 +24,7 @@ console.log(user,"====")
       <div className='rightsection'>
         <div className='right-header'><Header/></div> 
         <RightSection/>
+        
       </div>
     </div>
   )

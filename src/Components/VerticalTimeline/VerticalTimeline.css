@@ -1,0 +1,35 @@
+ /* VerticalTimeline.css */
+
+.vertical-timeline {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-top: 1.3rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    width: 33rem;
+  }
+  
+  .vertical-timeline {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    bottom: 25rem;
+  }
+
+
+
+  .vertical-timeline li {
+    margin: 20px;
+  }
+  
+  .vertical-timeline h3 {
+    margin: 0;
+  }
+  
+  .vertical-timeline p {
+    margin: 5px 0;
+  }
+   
+

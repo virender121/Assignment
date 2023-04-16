@@ -8,6 +8,16 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import "./Analytics.css";
 import CustomerReview from '../CustomerReview/CustomerReview'
+import VerticalTimeline from '../VerticalTimeline/VerticalTimeline'
+import Cards from "../Card/Card";
+import TaskList from "../TaskList/TaskList";
+import OrderData from "../OrderData/OrderData";
+import LeftSection from "../../Section/LeftSection/LeftSection";
+import Header from "../../Section/Header/Header";
+import PlanAnalytics from "../../Section/PlanAnalytics/PlanAnalytics";
+// import Footer from "../../Section/Footer/Footer";
+// import TbSettingsFilled from "react-icons/tfi"
+
 function createData(name, trackingId, date, status) {
   return { name, trackingId, date, status };
 }
@@ -45,8 +55,17 @@ const makeStyle=(status)=>{
 
 export default function BasicTable() {
   return (
-      <div className="Table">
-      <h3>Recent Orders</h3>
+      <div className="main">
+         <div className='leftsection'><LeftSection/></div>
+
+<div className='rightsection'>
+  <div className='right-header'><Header/></div> 
+        <PlanAnalytics/>
+        <div className="table-card">
+          <div className="table-header">
+      <h3>Company Agents Status</h3>
+      </div >
+      <div className="table-container">
         <TableContainer
           component={Paper}
           style={{ boxShadow: "0px 13px 20px 0px #80808029" }}
@@ -81,7 +100,28 @@ export default function BasicTable() {
             </TableBody>
           </Table>
         </TableContainer>
-        <CustomerReview/>
+        <button className="btn1">View Complete Report</button>
+        </div>
+        </div>
+        <div className="classes">
+        <div>
+        <CustomerReview/></div>
+        <div className="vertical">
+        <VerticalTimeline/>
+        </div></div>
+        <div className="cardtask">
+        <div className="task">
+        <TaskList/>
+        </div>
+        <div className="cards">
+        <Cards/>
+        </div>
+        </div>
+        <div className="order">
+        <OrderData/></div>
+        
+</div>
+       
       </div>
   );
 }

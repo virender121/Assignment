@@ -1,0 +1,33 @@
+.card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 16px;
+    padding: 16px;
+  }
+  
+  .card-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0px 3px 5px rgba(243, 64, 9, 0.596);
+    border-radius: 4px;
+    padding: 16px;
+    text-align: center;
+    font-size: 24px;
+  }
+  
+  .card-item h2 {
+    font-size: 48px;
+    margin-bottom: 8px;
+  }
+  
+  .card-item h4 {
+    font-size: 18px;
+    margin: 0;
+    text-transform: uppercase;
+    color: #888;
+  }
+  
