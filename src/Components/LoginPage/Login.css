@@ -84,14 +84,23 @@
       border-radius: 7px;
   
   }
-  @media only screen and (max-width: 768px) {
+   @media only screen and (max-width: 768px) {
     .sub-main {
       width: 100%;
     }
     
     .input, .btn, .btngoogle, .btngit, .btnfacebook {
-      width: 100%;
+      width: 90%;
       margin: 0.5rem 0;
     }
-  }
+    .input{
+      width: 70%;
+    }
+    .btn{
+      width: 70%;
+    }
+    .btngoogle{
+      width: 70%;
+    }
+  } 
   
