@@ -33,20 +33,8 @@ const Header = () => {
         src="https://cdn.batesvilletechnology.com/fh_live/13000/13002/images/obituaries/6827690.jpg"
         alt="Cindy Baker"
       />
-      <div className="header__hamburger" onClick={handleClick}>
-        {click ? (
-          <FaTimes size={20} style={{ color: '#fff' }} />
-        ) : (
-          <FaBars size={20} style={{ color: '#fff' }} />
-        )}
-      </div>
-      <div className={`header__left-section ${click ? 'header__left-section--open' : ''}`}>
-        <ul className="header__menu">
-          <li className="header__menu-item">Menu Item 1</li>
-          <li className="header__menu-item">Menu Item 2</li>
-          <li className="header__menu-item">Menu Item 3</li>
-        </ul>
-      </div>
+      
+     
     </div>
   );
 };
